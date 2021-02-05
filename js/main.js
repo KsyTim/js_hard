@@ -2,6 +2,7 @@
 function effortAmount(effort) {
   // создаем переменную и присвоим ей значение загаданного числа 
   const guessedNumber = Math.floor(Math.random()*100);
+  console.log(guessedNumber);
   // функция, проверяющая является ли переменная числом
   let isNumber = function(n){
     return !isNaN(parseFloat(n)) && isFinite(n);
@@ -27,6 +28,9 @@ function effortAmount(effort) {
     function notNumber() {
       alert('Введите число!');    
     }
+    function matchNumber() {
+      alert('Введите число из указанного диапазона!');    
+    }
     // функция, которая сообщает, что игра окончена, будет срабатывать, если нажата кнопка cancel, то есть yourNumber вернет null
     function cancelGame(){
       confirm('Игра окончена');
@@ -39,12 +43,13 @@ function effortAmount(effort) {
     if (isNumber(+yourNumber)){
       // если первое условие true, то можно сравнивать с загаданным числом
       // если меньше загаданного числа
-      if (+yourNumber > guessedNumber) {
+      if (+yourNumber < 1 || +yourNumber > 100) {
+        matchNumber();
+      } else if (+yourNumber > guessedNumber) {
         numberLess();
         // если cancel
       } else if (yourNumber === null) {
         cancelGame();
-        // если пустая строка или пробелы
       } else if (yourNumber === '' || yourNumber.trim() === '') {
         notNumber();
         // если больше загаданного числа
