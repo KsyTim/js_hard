@@ -49,28 +49,28 @@ function gameGuessTheNumber(){
       if (isNumber(+yourNumber)){
         // если первое условие true, то можно сравнивать с загаданным числом
         // если cancel
-        if (yourNumber === null) {
-          cancelGame();
-        } else if (yourNumber === '' || yourNumber.trim() === '') {
-          notNumber();
-          // если веденное число не из указанного диапазона
-        } else if (+yourNumber < 1 || +yourNumber > 100) {
-          matchNumber();
-          // если закончилось количество попыток
-        } else if (effort <= 0) {
-          effortEnd();
-          gameGuessTheNumber();
-          // если меньше загаданного числа
-        } else if (+yourNumber > guessedNumber) {
-          numberLess();
-          // если больше загаданного числа
-        } else if (+yourNumber < guessedNumber){
-          numberMore();
-          // если загаданное и введеное числа равны
-        } else if (+yourNumber === guessedNumber){
-          winGame();
-          gameGuessTheNumber();
-        }
+              if (yourNumber === null) {
+                cancelGame();
+              } else if (yourNumber === '' || yourNumber.trim() === '') {
+                notNumber();
+                // если веденное число не из указанного диапазона
+              } else if (+yourNumber < 1 || +yourNumber > 100) {
+                matchNumber();
+                // если закончилось количество попыток
+              } else if (effort <= 0) {
+                effortEnd();
+                gameGuessTheNumber();
+                // если меньше загаданного числа
+              } else if (+yourNumber > guessedNumber) {
+                numberLess();
+                // если больше загаданного числа
+              } else if (+yourNumber < guessedNumber){
+                numberMore();
+                // если загаданное и введеное числа равны
+              } else if (+yourNumber === guessedNumber){
+                winGame();
+                gameGuessTheNumber();
+              }
       } else {
         notNumber();
       }
