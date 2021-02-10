@@ -1,0 +1,23 @@
+'use strict'
+const books = document.querySelectorAll('.book');
+books[0].before(books[1]);
+books[5].after(books[2]);
+books[0].after(books[4]);
+document.body.style.backgroundImage = 'url(./image/you-dont-know-js.jpg)';
+const booksTitle = document.getElementsByTagName('h2');
+const booksContent = document.querySelectorAll('ul');
+booksTitle[2].remove();
+booksContent[2].insertAdjacentHTML('beforebegin', '<h2><a href="https://github.com/azat-io/you-dont-know-js-ru/blob/master/this%20%26%20object%20prototypes/README.md#you-dont-know-js-this--object-prototypes" target="_blank">Книга 3. this и Прототипы Объектов</a></h2>'); 
+const advt = document.querySelector('.adv');
+advt.style.display = 'none';
+const secondBookContent = booksContent[1].querySelectorAll('li');
+secondBookContent[9].after(secondBookContent[2]);
+secondBookContent[3].after(secondBookContent[6]);
+secondBookContent[6].after(secondBookContent[8]);
+const fifthBookContent = booksContent[4].querySelectorAll('li');
+fifthBookContent[4].after(fifthBookContent[2]);
+fifthBookContent[1].after(fifthBookContent[9]);
+fifthBookContent[7].after(fifthBookContent[5]);
+const sixBookContent = booksContent[5].querySelectorAll('li');
+sixBookContent[8].append('afterend', '<li>Глава 8: За пределами ES6</li>');
+console.log(sixBookContent);
