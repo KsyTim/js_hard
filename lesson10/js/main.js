@@ -19,5 +19,4 @@ fifthBookContent[4].after(fifthBookContent[2]);
 fifthBookContent[1].after(fifthBookContent[9]);
 fifthBookContent[7].after(fifthBookContent[5]);
 const sixBookContent = booksContent[5].querySelectorAll('li');
-sixBookContent[8].append('afterend', '<li>Глава 8: За пределами ES6</li>');
-console.log(sixBookContent);
+sixBookContent[8].insertAdjacentHTML('afterend', '<li>Глава 8: За пределами ES6</li>');
