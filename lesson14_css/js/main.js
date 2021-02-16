@@ -10,7 +10,7 @@ function DomElement(selector, height, width, bg, fontSize){
 DomElement.prototype.createElement = function(){
   DomElement.apply(this, arguments);
   if(this.selector[0] === '.'){
-    this.selector = this.selector.substr(1)
+    this.selector = this.selector.substr(1);
     let div = document.createElement('div');
     div.classList.add(`${this.selector}`);
     div.textContent = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam veritatis natus soluta iure architecto totam deserunt aliquid quas commodi repudiandae rem, vitae consequatur, eaque consectetur iusto labore? Voluptate, fugit aliquam?';
@@ -25,19 +25,14 @@ DomElement.prototype.createElement = function(){
   }
 };
 // с помощью cssText задаем стили созданному элементу в методе createElement
-DomElement.prototype.cssText = function(selector, height, width, bg, fontSize){
+DomElement.prototype.cssText = function(){
   DomElement.apply(this, arguments);
-  selector = this.selector;
-  height = this.height;
-  width = this.width;
-  bg = this.bg;
-  fontSize = this.fontSize;
-  selector = selector.substr(1);
-  let elem = document.querySelector(`${selector}`);
-  elem.style.cssText = `height: ${height};
-  width: ${width};
-  background-color: ${bg};
-  font-size: ${fontSize};
+  this.selector = this.selector.substr(1);
+  let elem = document.querySelector(`${this.selector}`);
+  elem.style.cssText = `height: ${this.height};
+  width: ${this.width};
+  background-color: ${this.bg};
+  font-size: ${this.fontSize};
   `;
 };
 // создаем объект класса DomElement
