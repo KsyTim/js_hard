@@ -4,6 +4,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const select = document.getElementById('cars'),
         output = document.getElementById('output');
 
+
+
+
+    /////////////////////          PROMISE          /////////////////////
+
     select.addEventListener('change', () => {
         const getData = (src) => {
             return new Promise((resolve, reject) => {
@@ -40,4 +45,29 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.error(error);
             });
     });
+
+
+
+
+    /////////////////////          FETCH          /////////////////////
+
+    // select.addEventListener('change', () => {
+    //   fetch('./cars.json')
+    //     .then((response) => {
+    //         if (response.status !== 200) {
+    //             throw new Error('Status network is not 200');
+    //         }
+    //         return response.json();
+    //     })
+    //     .then((data) => {
+    //         data.cars.forEach(item => {
+    //             if (item.brand === select.value) {
+    //                 const {brand, model, price} = item;
+    //                 output.innerHTML = `Тачка ${brand} ${model} <br>
+    //                 Цена: ${price}$`;
+    //             }
+    //         });
+    //     })
+    //     .catch((error) => console.error(error));
+    // });
 });
